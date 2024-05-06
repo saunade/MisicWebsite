@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Revenue</title>
+</head>
+<body>
+    <button id="calculateRevenueBtn">Calculate Revenue</button>
+    <div id="revenueResult"></div>
+
+    <script>
+        document.getElementById('calculateRevenueBtn').addEventListener('click', function() {
+            // Make a POST request to /calculate-revenue endpoint
+            fetch('/calculate-revenue', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Total revenue:', data.totalRevenue);
+                // Display the total revenue in the HTML element
+                document.getElementById('revenueResult').textContent = 'Total revenue: $' + data.totalRevenue;
+            })
+            .catch(error => {
+                console.error('Error calculating revenue:', error);
+                // Handle error if needed
+            });
+        });
+    </script>
+</body>
+</html>

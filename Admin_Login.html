@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Administration Login Page </title> 
+    <style>
+
+        ul.nav{
+            font-size: 30px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url('https://coolbackgrounds.io/images/backgrounds/blue/blue-contour-949e2eab.svg');
+            
+            background-size: cover;
+            background-position: center;
+        }
+        
+    </style>
+</head>
+
+
+<body>
+        <div class = "container" >
+            <ul class = "nav"> 
+                <li style="float:left"><a href="Home.html">Home</a></li>
+                <li style="float:left"><a href="Home.html"> About Us</a></li>
+                <li style="float:right"><a class="active">Admin Login</a></li>
+                <li style="float:right"><a href="Login.html">Member Login</a></li>
+                
+            </ul> 
+    
+        <div class = "login">
+            <div id="logo" style="overflow: hidden;"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBZYpyOlrBShwsop8EEQ
+                Jq4oX2jDAwFcAB13poju_GpuD3YOYwme8ztC-i2yJL6Ex7-OQ&usqp=CAU" style="border-radius: 45px; width: 25%;">
+                
+            </div> 
+                <label><b>Management Log In Here!</b></label>
+                <br>
+                <br>
+                <br>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <br>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <br>
+                <a>
+                    <button type="login" onclick="process()">Login</button>
+                </a>
+                <br>
+                <br>
+                <label class = "remember_me">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+    
+        </div>
+    
+        <div class="forgot_password" style="text-align:center">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span> 
+        </div>
+
+</body>
+
+<script>
+    function process() {
+    var name = document.querySelector("input[name=uname]").value.toLowerCase();
+    var pw = document.querySelector("input[name=psw]").value;
+
+    if (name === "treasurer" && pw === "treasurer") {
+        window.location.href = "Treasurer.html";
+    } else if (name === "coach" && pw === "coach") {
+        window.location.href = "Coach.html";
+    } else {
+        alert("Wrong Username or Password!");
+    }
+}
+
+</script>
+</html>

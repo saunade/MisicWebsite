@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width", initial-scale="1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Coach Page </title> 
+</head>
+
+<div class = "container"> <!-- the navigation bar -->
+    <ul class = "nav"> 
+        <li style="float:left"><a class="active">Coach</a></li> 
+        <li style="float:right"><a href="Home.html">Home</a></li>
+        <li style="float:left"><a href="MemberTable.html">Members</a></li>
+        <li style="float:left"><a href="UpcomingPractices.html">Scheduled</a></li>
+        <li style="float:right"><a href="Login.html">Log out</a></li>
+           
+    </ul>      
+</div>
+
+<div class = "container2">
+    <h2 class="heading">My Activity</h2>
+    <hr>
+    <input type="title" placeholder="Title" class ="inputbox1" required>
+    <hr class="hr">
+    <input type="message" placeholder="Add a message" class ="inputbox2" required>
+    <hr class="hr">
+    <button type="post" class="newpost">Post</button>
+</div>
+
+<div class = "float-container">
+    <div class = "float-child">
+        <div class = "container3">
+            <h2 class="heading">Add New Member</h2>
+            <hr>
+            <input type="first" placeholder="First Name" class ="inputbox3" required>
+            <hr class="hr">
+            <input type="last" placeholder="Last Name" class ="inputbox3" required>
+            <hr class="hr">
+            <input type="email" placeholder="Email Address" class ="inputbox3" required>
+            <hr class="hr">
+            <button type="register" class="registrationbutton">Add Member</button>
+            <button type="memlist" class="memberslist">View Members List</button>
+        </div>
+    </div>
+    
+    <div class = "float-child">
+        <div class = "container4">
+            <h2 class="heading">News and Events</h2>
+            <hr>
+            <p>Big tournament on May 6!</p>
+            <p>Practice for April 20th has been canceled.</p>
+            <p>Volunteer for our Annual Fundraiser!</p>
+            <p>All oustanding fees should be paid by June 1st.</p>
+            <p>Exhibition match on July 3rd!</p>
+            <p>Happy Birthday Coach Carr!</p>
+        </div>
+    </div>   
+</div>
+
+<style>
+
+    .float-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .float-child {
+        width: 45%;
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    .container3 {
+        padding: 15px;
+        background-color: lightgrey;
+    }
+
+    .container4 {
+        padding: 15px;
+        background-color: lightgrey;
+    }
+
+    .registrationbutton {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 16px 20px;
+        border: none;
+        width: 49%;
+    }
+
+    .container2 {
+        padding: 5px 10px 20px 10px;
+    }
+
+    .memberslist {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 16px 20px;
+        border: none;
+        width: 49%;
+    }
+
+    .newpost {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 16px 20px;
+        border: none;
+        width: 100%;
+    }
+
+    .inputbox1 {
+        padding: 0 0 20px 0;
+        width: 100%;
+    }
+
+    .inputbox2 {
+        padding: 0 0 60px 0;
+        width: 100%;
+    }
+
+    .inputbox3 {
+        padding: 0 0 20px 0;
+        width: 100%;
+    }
+
+    .heading {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hr {
+        border: none;
+    }
+</style>
+
+</html>

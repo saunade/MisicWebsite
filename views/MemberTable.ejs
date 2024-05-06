@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title> Treasurer Page</title> 
+</head>
+<div class = "container">
+    <ul class = "nav"> 
+      <li style="float:left"><a href="Treasurer.html">Treasurer</a></li>
+        <li style="float:right"><a href="Home.html">Home</a></li>
+        <li style="float:left"><a class="active">Members</a></li>
+        <li style="float:left"><a href="UpcomingPractices.html">Scheduled</a></li>
+        <li style="float:right"><a href="Login.html">Log out</a></li>
+    </ul>      
+</div>
+</head>
+<body>
+  <br>
+    <table class="table">
+      <caption>List of Members and Coaches</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Money</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%userr.forEach(user => {%>
+            <tr>
+              <td><%= user.memberId%></td>
+              <td><%= user.name%></td>
+              <td><%= user.email%></td>
+              <td><%= user.money%></td>
+            </tr>
+          <%})%>
+          
+        </tbody>
+      </table>
+
+</body>
+
+<style>
+
+    ul.nav{
+        background-origin: red;
+        font-size: 30px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .table {
+        body {
+        margin: 0;
+        padding: 0;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        }
+        th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        }
+        th {
+        background-color: white;
+        }
+        tr:nth-child(even) { 
+        background-color: white;     
+        }
+        caption {
+          font-size: 30px;
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          color: black;
+          text-align: center;
+        }
+
+        .addbutton {
+        margin-bottom: 10px;
+        }
+    }
+
+    /* Navigation Bar */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+      }
+}
+
+  .active {
+    background-color: #8aade0;
+  }
+    
+  </style>
+
+</html>

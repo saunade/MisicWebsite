@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Login and registration page </title> 
+    <style>
+
+        ul.nav{
+            font-size: 30px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url('https://coolbackgrounds.io/images/backgrounds/blue/blue-contour-949e2eab.svg');
+            
+            background-size: cover;
+            background-position: center;
+        }
+        
+    </style>
+</head>
+
+
+<body>
+        <div class = "container" >
+            <ul class = "nav"> 
+                <li style="float:left"><a href="Home.html">Home</a></li>
+                <li style="float:left"><a href="Home.html"> About Us</a></li>
+                <li style="float:right"><a class="active">Member Login</a></li>
+                <li style="float:right"><a href="Admin_Login.html"> Admin Login</a></li>
+            </ul> 
+    
+        <div class = "login">
+            <div id="logo" style="overflow: hidden;"> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBZYpyOlrBShwsop8EEQ
+                Jq4oX2jDAwFcAB13poju_GpuD3YOYwme8ztC-i2yJL6Ex7-OQ&usqp=CAU" style="border-radius: 45px; width: 25%;">
+                
+            </div> 
+                <label><b>Members Log In Here!</b></label>
+                <br>
+                <br>
+                <br>
+            <form id = "loginForm" method="POST" action="/login">
+                <label for="uname"><b>Membership ID</b></label>
+                <input type="text" id = "uname" placeholder="Enter Username" name="uname">
+                <br>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" id = "psw" placeholder="Enter Password" name="psw">
+                <br>
+                    <a href="member_dashboard.html">
+                    <button type="submit">Login</button>
+                    </a>
+                   
+                <br>
+            </form>
+                
+                <br>
+                <label class = "remember_me">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <br>
+                <a href="Register.html">
+                <button type="submit">New Member? Click Here</button>
+                </a>
+            <br>
+            </div>
+    
+        </div>
+    
+        <div class="forgot_password" style="text-align:center">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span> <!-- Add link to "password?"-->
+        </div>
+
+        <p id="message"></p>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        if (error === 'wrong_credentials') {
+            alert("Username or password is wrong.");
+        } else if (error === 'invalid_username') {
+            alert("Your Username is invalid.");
+        }
+    </script>
+</body>
+</html>

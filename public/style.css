@@ -1,0 +1,111 @@
+/* Global font */
+body {
+    font: normal 14px Verdana, Arial, sans-serif;
+}
+/* end of global font */
+
+/* Navigation Bar */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+li a {
+display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #8aade0;
+  }
+/* End of navigation bar */
+
+/* Home Page */
+.imgcontainer {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .homeheader {
+    padding: 60px;
+    color: white;
+    font-size: 64px;
+    background-color: #8aade0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.left-column {
+    width: 60%;
+    padding: 0 10px 20px 20px;
+    float: left;
+    border-style: solid;
+    border-color: #8aade0;
+}
+
+.right-column {
+    width: 33%;
+    padding: 0 10px 194px 20px;
+    float: right;
+    border-style: solid;
+    border-color: #8aade0;
+}
+
+.homebutton {
+    background-color: #8aade0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.login {
+  background-color: #8aade0;
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(0, 13, 128);
+  padding: 10px;
+  font-size: larger;
+  text-align: center;
+
+}
+
+.forgot_password {
+  background-color: #8aade0;
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(0, 13, 128);
+  padding: 10px;
+  align-items: center;
+}
+
+.remember_me{
+  background-color: #8aade0;
+  margin: auto;
+}
+
+.logo{
+  position:fixed;
+  align-items: center;
+  object-fit: contain;
+  border-radius: 295px;
+}
+/* End of Home Page */

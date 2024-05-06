@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <title>Members Page</title>
+</head>
+<body>
+<div class="container">
+   <ul class="nav">
+       <li style="float:left"><a href="Home.html">Home</a></li>
+       <li style="float:right"><a href="Login.html">Log out</a></li>
+       <li style="float:right"><a class="active" href="Members.html">Members</a></li>
+   </ul>  
+</div>
+  
+<h3 id="reminder">REMINDER: DISCOUNTS APPLY ONLY TO</h3>
+
+
+<div container="option2">
+    <form id="paymentForm">
+        <h1>Choose your amount of sessions and the date you want the sessions on.</h1>
+        <ul>
+            <li>If you pay more than 30 Days in advance you can get 20% off!!</li>
+            <li>Each session costs $10.00 (excluding discounts)</li>
+        </ul>
+        <label for="session_num">Enter the # of sessions:</label>
+        <input type="number" id="session_num" name="session_num" required>
+        <br>
+        <label for="session_date">Session Date:</label>
+        <input type="date" id="session_date" name="session_date" required>
+        <br>
+        <button type="button" onclick="payAdvance();">Pay in advance</button>
+    </form>
+ </div>
+ 
+
+<h1>Payment System</h1>
+
+<form id = "paymentForm" method="POST" action="/payment">
+   <label for="Member_num">Membership No:</label>
+   <input type="text" id="Member_num" name="mem_id"required>
+   <br>
+   <label for="firstName">First Name:</label>
+   <input type="text" id="firstName" name="FName" required>
+   <br>
+   <label for="lastName">Last Name:</label>
+   <input type="text" id="lastName" name="LName" required>
+   <br>
+   <label for="card">Card Number:</label>
+   <input type="text" id="card" name="Card_Num" required>
+   <br>
+   <label for="valid">Valid Thru:</label>
+   <input type="date" id="valid" name="Valid"required>
+   <br>
+   <label for="CVV">CVV:</label>
+   <input type="number" id="CVV" name="cvv" required>
+   <br>
+   <label for="amount">Amount ($):</label>
+   <input type="number" id="amount" placeholder="Amount" name="amnt" readonly>
+
+   <button onclick="payNow();">Pay Now</button>
+</form>
+
+<br>
+
+<style>
+   ul.nav {
+       background-origin: red;
+       font-size: 30px;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+</style>
+
+<script>
+   var total = 0;
+
+   function payClass() {
+       total = 10;
+       getAmount();
+   }
+
+   function payAdvance() {
+       var booked_date = new Date(document.getElementById("session_date").value);
+       var today = new Date();
+       var time_difference = Math.ceil((booked_date - today) / (1000 * 60 * 60 * 24)); 
+
+       if (time_difference > 30) {
+           session_num = document.getElementById("session_num").value;
+           total = (session_num * 10) * 0.8;
+       } else {
+           session_num = document.getElementById("session_num").value;
+           total = session_num * 10;
+       }
+
+       getAmount();
+   }
+
+   function getAmount() {
+       document.getElementById("amount").value = total;
+   }
+
+   function payNow() {
+   }
+</script>
+</html>

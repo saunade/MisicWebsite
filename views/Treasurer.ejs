@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width", initial-scale="1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title> Treasurer Page</title> 
+</head>
+<div class = "container"> <!-- the navigation bar -->
+    <ul class = "nav"> 
+        <li style="float:left"><a class="active">Treasurer</a></li> 
+        <li style="float:right"><a href="Home.html">Home</a></li>
+        <li style="float:left"><a href="MemberTable.html">Members</a></li>
+        <li style="float:left"><a href="UpcomingPractices.html">Scheduled</a></li>
+        <li style="float:right"><a href="Login.html">Log out</a></li>
+           
+    </ul>      
+</div>
+
+
+
+
+<body>
+    <br><br><br><br><br>
+
+<!-- SET MEETING -->      
+<div class="text">
+    
+    <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/Treasurer.html">
+        <h1>Set Meeting</h1>
+
+        <p>
+            <label>Pickup Date/Time
+            <input type="datetime-local" name="pickup_time" required>
+            </label>
+            </p>
+                
+            <p>
+            <label>Pickup Place
+            <select id="pickup_place" name="pickup_place">
+            <option value="" selected="selected">Select One</option>
+            <option value="KH" >Kerr Hall</option>
+            <option value="TRSM" >TRSM</option>
+            <option value="DSQ" >DSQ</option>
+            </select>
+            </label> 
+            </p>
+        <p>
+
+        <label>Special Instructions 
+        <textarea name="comments" maxlength="500"></textarea>
+        </label>
+        </p>
+        
+        <p><button>Submit Meeting</button></p>
+       
+        </form>
+</div>
+       
+    <!-- THE REVENUE -->
+<div class="text">
+    <h2>Total Revenue</h2>
+         <div class="box" id="revenue">
+             <h1>$<%= myRevenue%></h1>
+        </div>
+</div>
+
+        <!-- THE UNPAID DEBTS TABLE -->
+<div class = 'debts'>
+    <table>
+        <h2>Top Unpaid Debts</h2>
+   
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Money</th>
+        </tr>
+    
+    <tbody>
+        <tr>
+            <% for(var i=0; i<3; i++) {%>
+                <tr>
+                  <td><%= userr[i].name%></td>
+                  <td><%= userr[i].email%></td>
+                  <td><%= userr[i].money%></td>
+                </tr>
+              <%}%>
+        </tr>
+        
+    </tbody>
+    </table>
+</div>
+   
+</body>
+
+<style>
+
+    ul.nav{
+        background-origin: red;
+        font-size: 30px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .box {
+        width: 400px; 
+        height: 200px; 
+        background-color: #eee; 
+        border: 1px solid #ccc; 
+        padding: 50px; 
+        box-sizing: border-box;
+        opacity: 0.7;
+        border-radius: 20px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+        font-size: 50px;
+        position: absolute;
+        text-align: center;
+        }
+    }
+
+    .debts {
+        float: right;
+        padding-right: 40px;
+        border-radius: 10px;
+    }
+
+    .text {
+        font: normal 20px;
+        float: left;
+    }
+
+    table {
+        width: 500px;
+        height: 300px;
+        padding-left: 15px;
+        background-color: #eee;
+        border-radius: 10px;
+    }
+
+    /* SET MEETING STYLING */
+    .myForm {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 0.8em;
+        width: 30em;
+        padding-right: 7em;
+        padding-left: 30px;
+        float: center;
+
+        * {
+        box-sizing: border-box;
+        }
+    }
+    
+    .myForm label {
+    padding: 0;
+    font-weight: bold;
+    text-align: right;
+    display: block;
+    }
+
+    .myForm input,
+    .myForm select,
+    .myForm textarea {
+    margin-left: 2em;
+    float: right;
+    width: 20em;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+    }
+
+    .myForm textarea {
+    height: 100px;
+    }
+
+    .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-left: 14em;
+    margin-top: 1.8em;
+    }
+
+    .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+    }
+
+</style>
+
+</html>
