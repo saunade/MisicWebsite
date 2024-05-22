@@ -8,7 +8,9 @@ I also connected the webpages to MongoDB in server.js where I created the schema
 if you want to view the files, first follow the command lines below to properly setup the node package files
 
 npm init
+
 npm i express mongoose ejs
+
 nodemon server.js
 
 now the website should be running at localhost:3000
