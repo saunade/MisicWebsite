@@ -1,3 +1,6 @@
+https://github.com/saunade/MisicWebsite/assets/105402020/773ded44-dca2-4686-89ae-e18dd80110f5
+
+
 This project was created with a focus on learning how to work with the sprint cycle,
 I and 4 other students created this website within a week, completing user stories that we added to our sprint backlog
 Specifically, I worked on the pages relating treasurer: Finances.html, MemberTable.html, Treasurer.html, UpcomingPractices.html
