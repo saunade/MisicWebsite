@@ -1,4 +1,3 @@
-https://github.com/saunade/MisicWebsite/assets/105402020/02a5653c-070c-40ad-9b6e-46b32030ff8a
 
 
 This project was created with a focus on learning how to work with the sprint cycle,
